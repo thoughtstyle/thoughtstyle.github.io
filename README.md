@@ -1,2 +1,3 @@
 # thoughtstyle.github.io
-this is a test
+<a href="https://capitalizemytitle.com/">this is a test</a>
+
