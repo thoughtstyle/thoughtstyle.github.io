@@ -1,7 +1,7 @@
 # Birthday Adventures
 Instead of hosting a birthday party I'm going on some local adventures all of which you are invited to:
 ### Friday August 8th 6:30pm: Bunker Hill Vaporwave 
-Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonnaventure. Business casual attire suggested.
+Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonnaventure. Meet in the lobby of the Ketchum YMCA. Business casual attire suggested. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Saturday August 9th 5:00pm: Latin Mass/Taco Bell Cantina
 Latin Vigil Mass at St. Thomas the Apostle, Hollywood follwed by walk to Taco Bell Cantina for chalupas and bad drinks. Side quest: get a photo with an aggressive Marvel character and debate with Black Israelites. 
 ### Friday August 15th ?: Sprouts Echo Park Grand Opening
