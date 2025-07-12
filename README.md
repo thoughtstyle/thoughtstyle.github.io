@@ -1,7 +1,7 @@
 # Erik's Birthday Adventures™
 Rather than a big birthday bash I'm spreading out the fun:
 ### Ice Out of LA Comedy Fundraiser July 14th 7:00pm
-DSA-LA is hosting a fundraiser for the Coalition for Humane Immigrant Rights at the Regent Theater downtown. Featuring: John Early, Reggie Watts, Kate Berlant, Ron Funches and Vanessa Gonzalez. <a href="https://dsa-la.org/event/ice-out-of-la-fundraiser-for-chirla-w-john-early-reggie-watts/">get your tickets here.</a>
+DSA-LA is hosting a fundraiser for the Coalition for Humane Immigrant Rights at the Regent Theater downtown. Featuring: John Early, Reggie Watts, Kate Berlant, Ron Funches and Vanessa Gonzalez. <a href="https://dsa-la.org/event/ice-out-of-la-fundraiser-for-chirla-w-john-early-reggie-watts/">Get your tickets here.</a>
 ### Bunker Hill Vaporwave Friday August 8th 6:30pm  
 Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonaventure. Meet in the lobby of the Ketchum YMCA. Business casual attire suggested. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Latin Mass/Taco Bell Cantina Saturday August 9th 5:00pm 
