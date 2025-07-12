@@ -3,7 +3,7 @@ Rather than a big birthday bash I'm spreading out the fun:
 ### Bunker Hill Vaporwave Friday August 8th 6:30pm  
 Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonaventure. Meet in the lobby of the Ketchum YMCA. Business casual attire suggested. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Latin Mass/Taco Bell Cantina Saturday August 9th 5:00pm 
-Latin Vigil Mass at St. Thomas the Apostle, Hollywood followed by walk to Taco Bell Cantina for chalupas and bad drinks. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
+Latin Vigil Mass at St. Thomas the Apostle, Hollywood followed by walk to Taco Bell Cantina for chalupas and bad drinks. <a href="https://www.eventbrite.com/e/latin-masstaco-bell-cantina-tickets-1485597414859?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Sprouts Echo Park Grand Opening Friday August 15th time TBD 
 Sprouts is opening a new store in the former CVS on Glendale Blvd. I'm guessing we'll find chocolate covered pretzel samples and swag. Date and time may change. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Cats, Cats, Costco Saturday August 16th 12:00pm
