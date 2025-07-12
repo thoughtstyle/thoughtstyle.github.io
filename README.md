@@ -17,7 +17,7 @@ Visit the parsonage of Aimee Semple McPherson followed by a stroll in Echo Park.
 ### K-Town BBQ and Desserts August 24th 2:00pm 
 We'll hit the Wilshire Boulevard Tofu House followed by geometrical desserts at Tu Cha. <a href="https://www.eventbrite.com/e/1486481318639?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### The Sea is Dope August 30th 10:00am
-We'll visit the merchant marine ship S.S. Lane Victory in San Pedro and then head over to the Los Angeles Maritime Museum because the <a href="https://grantland.com/hollywood-prospectus/the-sea-is-dope/">sea is always dope.</a>. <a href="https://www.eventbrite.com/e/1486500746749?aff=oddtdtcreator">RSVP via Eventbrite</a>
+We'll visit the merchant marine ship S.S. Lane Victory in San Pedro and then head over to the Los Angeles Maritime Museum because the <a href="https://grantland.com/hollywood-prospectus/the-sea-is-dope/">sea is always dope</a>. <a href="https://www.eventbrite.com/e/1486500746749?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Rules
 A strict no gift policy will be enforced. If you want to throw around some money please <a href="https://secure.actblue.com/donate/me-and-marya-and-dsa-la?utm_source=supporter_welcome&utm_content=supporter_form">donate to the DSA</a> or to <a href="https://www.santedor.org/donate">Santé D'Or</a>.
 ### Fun Fact
