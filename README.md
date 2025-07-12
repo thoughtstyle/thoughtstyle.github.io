@@ -13,7 +13,7 @@ We'll have a power lunch at the Los Feliz Costco (membership not required) and t
 ### Dubai Chocolate hangout at Sasquatch HQ Sunday August 17th 6:00pm
 Experience the viral Dubai chocolate trend via a small stand on Sunset Boulevard and then hang out at Sasquatch HQ. <a href="https://www.eventbrite.com/e/dubai-chocolate-hangout-at-sasquatch-hq-tickets-1486464057009?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Aimee Semple McPherson Parsonage Tour August 21st 1:00pm 
-Visit the parsonage of Aimee Semple McPherson followed by a stroll in Echo Park. <a href="https://www.eventbrite.com/e/echo-park-sprouts-grand-opening-tickets-1485600544219?aff=oddtdtcreator">RSVP via Eventbrite</a>
+Visit the parsonage of Aimee Semple McPherson followed by a stroll in Echo Park. <a href="https://www.eventbrite.com/e/1486475481179?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### K-Town BBQ and Desserts August 24th 2:00pm 
 We'll hit the Wilshire Boulevard Tofu House followed by geometrical desserts at Tu Cha. <a href="https://www.eventbrite.com/e/echo-park-sprouts-grand-opening-tickets-1485600544219?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### The Sea is Dope August 30th 10:00am
