@@ -6,7 +6,12 @@ DSA-LA is hosting a fundraiser for the Coalition for Humane Immigrant Rights at 
 Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonaventure. Meet in the lobby of the Ketchum YMCA. Business casual attire suggested. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
 <br>
 <b>Readings:</b>
+<br>
+<a href="https://github.com/thoughtstyle/thoughtstyle.github.io/blob/main/Jameson-Bonaventure.pdf">Fredric Jameson Bonnaventure section from <i>Postmodernism: or The Cultural Logic of Late Capitalism</a>
+<br>
 <a href="https://github.com/thoughtstyle/thoughtstyle.github.io/blob/main/Davis1985UrbanRenaissance.pdf">Mike Davis <i>Urban Renaissance</i></a>
+<br>
+Video: <a href="https://youtu.be/hhyQ0HES8mM?si=OrMqtzczEhHi0W77">Ed Soja discusses the postmodern nature of the Bonaventure Hotel</a>
 ### Latin Mass/Taco Bell Cantina Saturday August 9th 5:00pm 
 Latin Vigil Mass at St. Thomas the Apostle, Hollywood followed by walk to Taco Bell Cantina for chalupas and bad drinks. <a href="https://www.eventbrite.com/e/latin-masstaco-bell-cantina-tickets-1485597414859?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Sprouts Echo Park Grand Opening Friday August 15th time TBD 
