@@ -4,7 +4,8 @@ Rather than a big birthday bash I'm spreading out the fun:
 DSA-LA is hosting a fundraiser for the Coalition for Humane Immigrant Rights at the Regent Theater downtown. Featuring: John Early, Reggie Watts, Kate Berlant, Ron Funches and Vanessa Gonzalez. <a href="https://dsa-la.org/event/ice-out-of-la-fundraiser-for-chirla-w-john-early-reggie-watts/">Get your tickets here.</a>
 ### Bunker Hill Vaporwave August 8th 6:30pm  
 Exploration of the Calvin S. Hamilton Pedway system followed by drinks in the lobby of the Bonaventure. Meet in the lobby of the Ketchum YMCA. Business casual attire suggested. <a href="https://www.eventbrite.com/e/bunker-hill-vaporwave-tickets-1485576361889?aff=oddtdtcreator">RSVP via Eventbrite</a>
-Readings:
+<br>
+<b>Readings:</b>
 <a href="https://github.com/thoughtstyle/thoughtstyle.github.io/blob/main/Davis1985UrbanRenaissance.pdf">Mike Davis <i>Urban Renaissance</i></a>
 ### Latin Mass/Taco Bell Cantina Saturday August 9th 5:00pm 
 Latin Vigil Mass at St. Thomas the Apostle, Hollywood followed by walk to Taco Bell Cantina for chalupas and bad drinks. <a href="https://www.eventbrite.com/e/latin-masstaco-bell-cantina-tickets-1485597414859?aff=oddtdtcreator">RSVP via Eventbrite</a>
