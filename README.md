@@ -10,8 +10,8 @@ Latin Vigil Mass at St. Thomas the Apostle, Hollywood followed by walk to Taco B
 Sprouts is opening a new store at the former CVS on Glendale Boulevard. I'm guessing we'll find chocolate covered pretzel samples and Sprouts swag. We'll pick up some weird foods and head back to Sasquatch HQ. Date and time may change. <a href="https://www.eventbrite.com/e/1485601015629?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Cats, Cats, Costco Saturday August 16th 12:00pm
 We'll have a power lunch at the Los Feliz Costco (membership not required) and then walk over to Santé D'Or Foundation and Adoption Center to hang out with the cats. After party desserts at India Sweets and Spices. <a href="https://www.eventbrite.com/e/cats-cats-costco-tickets-1485601547219?aff=oddtdtcreator">RSVP via Eventbrite</a>
-### Dubai Chocolate hangout at Sasquatch HQ Sunday August 17th 6:00pm
-Experience the viral Dubai chocolate trend via a small stand on Sunset Boulevard and then hang out at Sasquatch HQ. <a href="https://www.eventbrite.com/e/dubai-chocolate-hangout-at-sasquatch-hq-tickets-1486464057009?aff=oddtdtcreator">RSVP via Eventbrite</a>
+### Let Them Eat Dubai Chocolate Cake at Sasquatch HQ Sunday August 17th 7:00pm
+Jessica R had a great idea at our downtown walk: bake some cake and hang out on a regular basis. I'm calling this a trial run. I'll bake a Dubai chocolate cake and make some beverages to go with it. Plan is we hang out and chat at Sasquatch HQ. <a href="https://www.eventbrite.com/e/dubai-chocolate-hangout-at-sasquatch-hq-tickets-1486464057009?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### Aimee Semple McPherson Parsonage Tour August 21st 1:00pm 
 Visit the parsonage of Aimee Semple McPherson followed by a stroll in Echo Park. <a href="https://www.eventbrite.com/e/1486475481179?aff=oddtdtcreator">RSVP via Eventbrite</a>
 ### K-Town BBQ and Desserts August 24th 2:00pm 
