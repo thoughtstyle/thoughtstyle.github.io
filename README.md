@@ -39,7 +39,7 @@
         // Add the exact filenames of the photos in your 'photos' folder
         const photos = [
             'photo1.jpg',
-            'vacation.png',
+            'vacation.jpg',
             'dog.jpeg'
         ];
 
