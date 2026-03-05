@@ -40,7 +40,7 @@
         const photos = [
             'photo1.jpg',
             'vacation.jpg',
-            'dog.jpeg'
+            'dog.jpg'
         ];
 
         // 2. THE PATH TO YOUR FOLDER
