@@ -35,26 +35,36 @@
     <div class="gallery" id="photo-grid"></div>
 
     <script>
-        // 1. LIST YOUR PHOTOS HERE
-        // Add the exact filenames of the photos in your 'photos' folder
-        const photos = [
-            'photo1.jpg',
-            'vacation.jpg',
-            'dog.jpg'
-        ];
+    // 1. LIST YOUR PHOTOS HERE
+    const photos = [
+        'photo1.jpg',
+        'vacation.png',
+        'dog.jpeg',
+        'sunset.jpg',
+        'forest.webp'
+    ];
 
-        // 2. THE PATH TO YOUR FOLDER
-        const folder = 'photos/'; 
+    const folder = 'photos/'; 
+    const gallery = document.getElementById('photo-grid');
 
-        const gallery = document.getElementById('photo-grid');
+    // 2. THE SHUFFLE FUNCTION (Fisher-Yates Algorithm)
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
 
-        // 3. GENERATE THE HTML
-        photos.forEach(filename => {
-            const div = document.createElement('div');
-            div.className = 'gallery-item';
-            div.innerHTML = `<img src="${folder}${filename}" alt="${filename}">`;
-            gallery.appendChild(div);
-        });
-    </script>
+    // 3. SHUFFLE AND RENDER
+    const randomPhotos = shuffle([...photos]); // Shuffle a copy of the list
+
+    randomPhotos.forEach(filename => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.innerHTML = `<img src="${folder}${filename}" alt="${filename}">`;
+        gallery.appendChild(div);
+    });
+</script>
 </body>
 </html>
