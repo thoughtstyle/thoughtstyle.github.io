@@ -41,7 +41,7 @@
 </head>
 <body>
 
-    <h1>Your Daily Photo</h1>
+    <h1>Distant Early Warning</h1>
 
     <div class="photo-container">
         <img id="random-photo" src="" alt="Loading random image...">
@@ -51,8 +51,8 @@
         // 1. ADD YOUR FILENAMES HERE
         const photos = [
             'photo1.jpg',
-            'vacation.png',
-            'dog.jpeg',
+            'vacation.jpg',
+            'dog.jpg',
             'sunset.jpg'
         ];
 
