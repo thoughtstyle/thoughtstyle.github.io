@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Photo of the Day</title>
+    <title>Random Photo 275x404</title>
     <style>
-        /* Centers everything on the page */
         body { 
             font-family: sans-serif; 
-            background: #1a1a1a; /* Dark background looks great for photos */
+            background: #1a1a1a; 
             margin: 0; 
             display: flex;
             flex-direction: column;
@@ -19,56 +18,53 @@
         }
 
         .photo-container {
-            max-width: 90%;
-            max-height: 80vh;
-            border: 5px solid white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            overflow: hidden;
+            /* This forces the container to your specific dimensions */
+            width: 275px;
+            height: 404px;
+            border: 4px solid #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             background: #333;
+            overflow: hidden;
         }
 
         #random-photo {
+            width: 100%;
+            height: 100%;
+            /* 'cover' crops the edges slightly to prevent stretching */
+            object-fit: cover; 
             display: block;
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain; /* Ensures the whole photo fits */
         }
 
-        h1 { margin-bottom: 20px; font-weight: 300; }
+        h1 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 300; }
     </style>
 </head>
 <body>
 
-    <h1>Surprise Photo</h1>
+    <h1>Your Daily Photo</h1>
 
     <div class="photo-container">
-        <img id="random-photo" src="" alt="Loading...">
+        <img id="random-photo" src="" alt="Loading random image...">
     </div>
 
     <script>
-        // 1. LIST YOUR PHOTOS HERE
+        // 1. ADD YOUR FILENAMES HERE
         const photos = [
             'photo1.jpg',
             'vacation.png',
             'dog.jpeg',
-            'sunset.jpg',
-            'forest.webp'
+            'sunset.jpg'
         ];
 
-        // 2. THE PATH TO YOUR FOLDER
         const folder = 'photos/'; 
 
-        // 3. PICK ONE RANDOM PHOTO
-        // Math.random() gives a number between 0 and 1
-        // We multiply by the list length and round down to get a valid index
+        // 2. LOGIC TO PICK ONE
         const randomIndex = Math.floor(Math.random() * photos.length);
         const selectedPhoto = photos[randomIndex];
 
-        // 4. DISPLAY IT
+        // 3. APPLY TO THE IMAGE TAG
         const imgElement = document.getElementById('random-photo');
         imgElement.src = folder + selectedPhoto;
-        imgElement.alt = "Random Image: " + selectedPhoto;
     </script>
 
 </body>
