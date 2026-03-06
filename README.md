@@ -41,7 +41,7 @@
         'vacation.png',
         'dog.jpeg',
         'sunset.jpg',
-        'forest.webp'
+        'forest.jpg'
     ];
 
     const folder = 'photos/'; 
