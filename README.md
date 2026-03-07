@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Photo 275x404</title>
+    <title>Daily Comparison</title>
     <style>
         body { 
-            font-family: sans-serif; 
-            background: #1a1a1a; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #121212; 
             margin: 0; 
             display: flex;
             flex-direction: column;
@@ -16,55 +17,88 @@
             color: white;
         }
 
-        .photo-container {
-            /* This forces the container to your specific dimensions */
-            width: 275px;
-            height: 404px;
-            border: 4px solid #fff;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            background: #333;
-            overflow: hidden;
+        /* Container for both cards */
+        .card-wrapper {
+            display: flex;
+            gap: 20px; /* Space between the cards */
+            flex-wrap: wrap; /* Allows stacking on small mobile screens */
+            justify-content: center;
         }
 
-        #random-photo {
+        .card {
+            width: 275px;
+            height: 404px;
+            border: 2px solid #444;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card img {
             width: 100%;
             height: 100%;
-            /* 'cover' crops the edges slightly to prevent stretching */
-            object-fit: cover; 
+            object-fit: cover;
             display: block;
         }
 
-        h1 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 300; }
+        .label {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Distant Early Warning Card of the Day</h1>
+    <div class="card-wrapper">
+        <div>
+            <div class="card">
+                <img src="photos/distant.jpg" alt="Distant">
+            </div>
+            <div class="label">Fixed: Distant</div>
+        </div>
 
-    <div class="photo-container">
-        <img id="random-photo" src="" alt="Loading random image...">
+        <div>
+            <div class="card">
+                <img id="daily-photo" src="" alt="Daily Random">
+            </div>
+            <div class="label">Daily Random</div>
+        </div>
     </div>
 
     <script>
-        // 1. ADD YOUR FILENAMES HERE
-        const photos = [
+        // 1. LIST YOUR POOL OF RANDOM PHOTOS HERE
+        // (Do not include distant.jpg here if you don't want it to repeat on the right)
+        const photoPool = [
             'photo1.jpg',
             'vacation.jpg',
             'dog.jpg',
-            'sunset.jpg'
+            'sunset.jpg',
+            'forest.jpg'
         ];
 
-        const folder = 'photos/'; 
+        const folder = 'photos/';
 
-        // 2. LOGIC TO PICK ONE
-        const randomIndex = Math.floor(Math.random() * photos.length);
-        const selectedPhoto = photos[randomIndex];
+        // 2. DAILY LOGIC
+        // We get a unique number for "today" (number of days since 1970)
+        const now = new Date();
+        const daysSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+        
+        // 3. PICK IMAGE BASED ON THE DAY
+        // Using the modulus (%) operator ensures we stay within the list length
+        const dailyIndex = daysSinceEpoch % photoPool.length;
+        const selectedPhoto = photoPool[dailyIndex];
 
-        // 3. APPLY TO THE IMAGE TAG
-        const imgElement = document.getElementById('random-photo');
-        imgElement.src = folder + selectedPhoto;
+        // 4. APPLY TO IMAGE
+        document.getElementById('daily-photo').src = folder + selectedPhoto;
     </script>
+
+</body>
+</html>
     <h1>The Internet</h1>
     
 <a href="https://blog.lostartpress.com/">Lost Art Press</a><BR>
