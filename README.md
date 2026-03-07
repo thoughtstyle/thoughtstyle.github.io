@@ -40,7 +40,7 @@
 </head>
 <body>
 
-    <h1>Distant Early Warning</h1>
+    <h1>Distant Early Warning Card of the Day</h1>
 
     <div class="photo-container">
         <img id="random-photo" src="" alt="Loading random image...">
