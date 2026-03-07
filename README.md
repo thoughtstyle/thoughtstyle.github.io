@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,14 +58,14 @@
             <div class="card">
                 <img src="photos/distant.jpg" alt="Distant">
             </div>
-            <div class="label">Fixed: Distant</div>
+            <div class="label">Your . . .</div>
         </div>
 
         <div>
             <div class="card">
                 <img id="daily-photo" src="" alt="Daily Random">
             </div>
-            <div class="label">Daily Random</div>
+            <div class="label">Card of the Day</div>
         </div>
     </div>
 
