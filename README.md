@@ -65,6 +65,10 @@
         const imgElement = document.getElementById('random-photo');
         imgElement.src = folder + selectedPhoto;
     </script>
+    <h1>The Internet</h1>
+    
+<a href="https://blog.lostartpress.com/">Lost Art Press</a>
+
 
 </body>
 </html>
