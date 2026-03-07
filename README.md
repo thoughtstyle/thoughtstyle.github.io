@@ -97,8 +97,6 @@
         document.getElementById('daily-photo').src = folder + selectedPhoto;
     </script>
 
-</body>
-</html>
     <h1>The Internet</h1>
     
 <a href="https://blog.lostartpress.com/">Lost Art Press</a><BR>
