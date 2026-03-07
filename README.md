@@ -99,6 +99,7 @@
     <h1>The Internet</h1>
     
 <a href="https://blog.lostartpress.com/">Lost Art Press</a><BR>
+<a href="https://www.finewoodworking.com/">Fine Woodworking</a><BR>
 <a href="https://www.theredhandfiles.com/">The Red Hand Files</a><BR>
 <a href="https://www.rootsimple.com/">Root Simple</a><BR>
 
