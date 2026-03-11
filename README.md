@@ -1,4 +1,39 @@
-<html lang="en">
+<script>
+    const folder = 'photos/';
+
+    // 1. LIST YOUR POOL OF RANDOM PHOTOS HERE
+    const photoPool = [
+        '2heart.jpg', '2club.jpg', '2spade.jpg',
+        '3club.jpg', '3dia.jpg', '3spade.jpg',
+        '4dia.jpg', '4spade.jpg', '4heart.jpg',
+        '5club.jpg', '5dia.jpg', '5heart.jpg', '5spade.jpg',
+        '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg',
+        '7club.jpg', '7dia.jpg', '7heart.jpg',
+        '8club.jpg', '8heart.jpg', '8spade.jpg',
+        '9club.jpg', '9dia.jpg', '9heart.jpg', '9spade.jpg',
+        '10club.jpg', '10dia.jpg', '10heart.jpg', '10spade.jpg',
+        'aclub.jpg', 'aspade.jpg',
+        'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 'joker.jpg', 'jspade.jpg',
+        'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
+        'qclub.jpg', 'qdia.jpg', 'qspade.jpg'
+    ];
+
+    // 2. DAILY LOGIC
+    // We get a unique number for "today" (days since 1970)
+    const now = new Date();
+    // Using UTC date ensures the card changes at the same time for everyone
+    const daysSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+    
+    // 3. PICK IMAGE BASED ON THE DAY
+    const dailyIndex = daysSinceEpoch % photoPool.length;
+    const selectedPhoto = photoPool[dailyIndex];
+
+    // 4. APPLY TO IMAGE
+    // Ensure the ID exists before setting src
+    window.onload = function() {
+        document.getElementById('daily-photo').src = folder + selectedPhoto;
+    };
+</script><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
