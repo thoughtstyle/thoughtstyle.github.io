@@ -73,11 +73,52 @@
         // 1. LIST YOUR POOL OF RANDOM PHOTOS HERE
         // (Do not include distant.jpg here if you don't want it to repeat on the right)
         const photoPool = [
-            'photo1.jpg',
-            'vacation.jpg',
-            'dog.jpg',
-            'sunset.jpg',
-            'forest.jpg'
+            '2heart.jpg',
+            '2club.jpg',
+            '2spade.jpg',
+            '3club.jpg',
+            '3dia.jpg'
+            '3spade.jpg'
+            '4dia.jpg'
+            '4spade.jpg'
+            '4heart.jpg'
+            '4spade.jpg'
+            '5club.jpg'
+            '5dia.jpg'
+            '5spade.jpg'
+            '5club.jpg'
+            '6club.jpg'
+            '6dia.jpg'
+            '6heart.jpg'
+            '6spade.jpg'
+            '7club.jpg'
+            '7dia.jpg'
+            '7heart.jpg'
+            '8club.jpg'
+            '8heart.jpg'
+            '8spade.jpg'
+            '9club.jpg'
+            '9dia.jpg'
+            '9heart.jpg'
+            '9spade.jpg'
+            '10club.jpg'
+            '10dia.jpg'
+            '10heart.jpg'
+            '10spade.jpg'
+            'aclub.jpg'
+            'aspade.jpg'
+            'jclub.jpg'
+            'jdia.jpg'
+            'jheart.jpg'
+            'joker.jpg'
+            'jspade.jpg'
+            'kclub.jpg'
+            'kdia.jpg'
+            'kheart.jpg'
+            'kspade.jpg'
+            'qclub.jpg'
+            'qdia.jpg'
+            'qspade.jpg'
         ];
 
         const folder = 'photos/';
