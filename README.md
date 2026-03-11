@@ -84,44 +84,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        /* New Archive Section Styling */
-.archive-section {
-    margin-top: 60px;
-    padding: 40px 0;
-    border-top: 1px solid #333;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #0a0a0a;
-}
-
-.archive-card {
-    width: 250px;
-    height: 150px;
-    border: 1px dashed #666;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    background: #1a1a1a;
-}
-
-.archive-card:hover {
-    border-color: #fff;
-    background: #252525;
-    transform: translateY(-5px);
-}
-
-.archive-link {
-    color: #0087ff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    margin-top: 10px;
-    letter-spacing: 1px;
-}
     </style>
 </head>
 <body>
@@ -219,21 +181,6 @@
 <a href="https://davidbentleyhart.substack.com/">David Bentley Hart Substack</a><BR>
 <a href="https://www.rootsimple.com/">Root Simple</a><BR>
 <div class="archive-section">
-        <div class="label" style="margin-bottom: 20px;">Public Domain Archive</div>
         
-        <a href="https://pdimagearchive.org/infinite-view/" target="_blank" class="archive-card">
-            <div style="text-align: center;">
-                <span style="font-size: 2rem;">∞</span><br>
-                <span style="font-size: 0.7rem; color: #888;">OPEN INFINITE VIEW</span>
-            </div>
-        </a>
-
-        <a href="https://pdimagearchive.org/infinite-view/" target="_blank" class="archive-link">
-            RANDOMIZE ARCHIVE &rarr;
-        </a>
-    </div>
-
-
-
 </body>
 </html>
