@@ -172,18 +172,5 @@
         document.getElementById('daily-photo').src = folder + selectedPhoto;
     </script>
 
-    <div class="links-section">
-        <h1>The Internet</h1>
-        <a href="https://blog.lostartpress.com/">Lost Art Press</a><br>
-        <a href="https://www.finewoodworking.com/">Fine Woodworking</a><br>
-        <a href="https://weirdosphere.mn.co/">Weirdosphere</a><br>
-        <a href="https://www.theredhandfiles.com/">The Red Hand Files</a><br>
-        <a href="https://davidbentleyhart.substack.com/">David Bentley Hart Substack</a><br>
-        <a href="https://www.rootsimple.com/">Root Simple</a>
-    </div> <script>
-        // Your JavaScript goes here...
-        // It's best to keep it right before the </body> tag 
-        // so the images are already loaded when the script runs.
-    </script>
 </body> 
 </html>
