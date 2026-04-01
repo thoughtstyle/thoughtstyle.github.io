@@ -93,14 +93,14 @@
             <div class="card">
                 <img src="photos/distant.jpg" alt="Distant">
             </div>
-            <div class="label">Your . . .</div>
+            <div class="label">One Marshall McLuhan card per day</div>
         </div>
 
         <div>
             <div class="card">
                 <img id="daily-photo" src="" alt="Daily Random">
             </div>
-            <div class="label">Card of the Day</div>
+            <div class="label">Inspired by <a href="https://www.weirdstudies.com/112">episode 112 of Weird Studies</a></div>
         </div>
     </div>
 
