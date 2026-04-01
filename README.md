@@ -79,7 +79,7 @@
         .label {
             text-align: center;
             margin-top: 10px;
-            font-size: 0.9rem;
+            font-size: 0.4rem;
             color: #888;
             text-transform: uppercase;
             letter-spacing: 1px;
