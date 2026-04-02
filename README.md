@@ -44,7 +44,7 @@
         /* The new separate text row */
         .info-text {
             margin-top: 30px;
-            text-align: center;
+            text-align: left;
             font-size: 0.7rem;
             color: #888;
             text-transform: uppercase;
