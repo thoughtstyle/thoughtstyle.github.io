@@ -14,9 +14,9 @@
             justify-content: center;
             height: 100vh; 
             color: white;
+            overflow: hidden;
         }
 
-        /* Container for both cards */
         .card-wrapper {
             display: flex;
             gap: 20px; 
@@ -41,7 +41,7 @@
             display: block;
         }
 
-        /* The new separate text row */
+        /* LEFT JUSTIFIED TEXT */
         .info-text {
             margin-top: 30px;
             text-align: left;
@@ -50,12 +50,99 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 1.6;
-            max-width: 80%;
+            width: 100%;
+            max-width: 410px; /* Aligns roughly with the width of two cards + gap */
         }
 
-        .info-text a {
-            color: #aaa;
-            text-decoration: underline;
+        .info-text a { color: #aaa; text-decoration: underline; }
+
+        #view-deck-btn {
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: transparent;
+            color: #888;
+            border: 1px solid #444;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            align-self: center;
+        }
+
+        /* GRID OVERLAY */
+        #grid-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 100;
+            overflow-y: auto;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        /* BIGGER GRID IMAGES */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mini-card {
+            aspect-ratio: 2/3;
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .mini-card:hover { transform: scale(1.05); border-color: #777; }
+        .mini-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        .close-btn {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(40,40,40,0.8);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            z-index: 110;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LIGHTBOX */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-height: 85vh;
+            max-width: 90vw;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0,0,0,1);
         }
     </style>
 </head>
@@ -65,7 +152,6 @@
         <div class="card">
             <img src="photos/distant.jpg" alt="Distant">
         </div>
-
         <div class="card">
             <img id="daily-photo" src="" alt="Daily Random">
         </div>
@@ -76,38 +162,69 @@
         Inspired by <a href="https://www.weirdstudies.com/112" target="_blank">episode 112 of Weird Studies</a>
     </div>
 
+    <button id="view-deck-btn">View Full Deck</button>
+
+    <div id="grid-overlay">
+        <button class="close-btn" id="close-grid">&times;</button>
+        <div class="grid-container" id="grid-content"></div>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Size">
+    </div>
+
     <script>
         const folder = 'photos/';
-
-        // 1. POOL OF RANDOM PHOTOS
         const photoPool = [
-            '2heart.jpg', '2club.jpg', '2spade.jpg',
-            '3club.jpg', '3dia.jpg', '3spade.jpg',
-            '4dia.jpg', '4spade.jpg', '4heart.jpg',
-            '5club.jpg', '5dia.jpg', '5heart.jpg', '5spade.jpg',
-            '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg',
-            '7club.jpg', '7dia.jpg', '7heart.jpg',
-            '8club.jpg', '8heart.jpg', '8spade.jpg',
-            '9club.jpg', '9dia.jpg', '9heart.jpg', '9spade.jpg',
-            '10club.jpg', '10dia.jpg', '10heart.jpg', '10spade.jpg',
-            'aclub.jpg', 'aspade.jpg',
-            'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 'joker.jpg', 'jspade.jpg',
-            'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
+            '2heart.jpg', '2club.jpg', '2spade.jpg', '3club.jpg', '3dia.jpg', '3spade.jpg',
+            '4dia.jpg', '4spade.jpg', '4heart.jpg', '5club.jpg', '5dia.jpg', '5heart.jpg', 
+            '5spade.jpg', '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg', '7club.jpg', 
+            '7dia.jpg', '7heart.jpg', '8club.jpg', '8heart.jpg', '8spade.jpg', '9club.jpg', 
+            '9dia.jpg', '9heart.jpg', '9spade.jpg', '10club.jpg', '10dia.jpg', '10heart.jpg', 
+            '10spade.jpg', 'aclub.jpg', 'aspade.jpg', 'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 
+            'joker.jpg', 'jspade.jpg', 'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
             'qclub.jpg', 'qdia.jpg', 'qspade.jpg'
         ];
 
-        // 2. DAILY LOGIC
+        // 1. SELECT DAILY IMAGE
         const now = new Date();
         const daysSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-        
-        // 3. PICK IMAGE BASED ON THE DAY
         const dailyIndex = daysSinceEpoch % photoPool.length;
-        const selectedPhoto = photoPool[dailyIndex];
+        const dailyPhoto = photoPool[dailyIndex];
+        document.getElementById('daily-photo').src = folder + dailyPhoto;
 
-        // 4. APPLY TO IMAGE
-        // We can run this immediately since the script is at the bottom of the body
-        document.getElementById('daily-photo').src = folder + selectedPhoto;
+        // 2. GRID ELEMENTS
+        const btn = document.getElementById('view-deck-btn');
+        const overlay = document.getElementById('grid-overlay');
+        const closeBtn = document.getElementById('close-grid');
+        const gridContent = document.getElementById('grid-content');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Open Grid (Excluding the daily photo)
+        btn.onclick = () => {
+            gridContent.innerHTML = ''; 
+            photoPool.forEach(photo => {
+                if (photo !== dailyPhoto) { 
+                    const div = document.createElement('div');
+                    div.className = 'mini-card';
+                    const img = document.createElement('img');
+                    img.src = folder + photo;
+                    
+                    div.onclick = () => {
+                        lightboxImg.src = folder + photo;
+                        lightbox.style.display = 'flex';
+                    };
+                    
+                    div.appendChild(img);
+                    gridContent.appendChild(div);
+                }
+            });
+            overlay.style.display = 'block';
+        };
+
+        closeBtn.onclick = () => overlay.style.display = 'none';
+        lightbox.onclick = () => lightbox.style.display = 'none';
     </script>
-
 </body> 
 </html>
