@@ -14,7 +14,7 @@
             justify-content: center;
             height: 100vh; 
             color: white;
-            overflow: hidden; /* Prevent scroll on main page */
+            overflow: hidden;
         }
 
         .card-wrapper {
@@ -41,23 +41,21 @@
             display: block;
         }
 
+        /* LEFT JUSTIFIED TEXT */
         .info-text {
             margin-top: 30px;
-            text-align: center;
+            text-align: left;
             font-size: 0.7rem;
             color: #888;
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 1.6;
-            max-width: 80%;
+            width: 100%;
+            max-width: 410px; /* Aligns roughly with the width of two cards + gap */
         }
 
-        .info-text a {
-            color: #aaa;
-            text-decoration: underline;
-        }
+        .info-text a { color: #aaa; text-decoration: underline; }
 
-        /* --- New Button Style --- */
         #view-deck-btn {
             margin-top: 20px;
             padding: 8px 16px;
@@ -68,61 +66,83 @@
             cursor: pointer;
             font-size: 0.7rem;
             text-transform: uppercase;
-            transition: all 0.3s;
+            align-self: center;
         }
 
-        #view-deck-btn:hover {
-            color: white;
-            border-color: white;
-            background: #222;
-        }
-
-        /* --- Full Deck Overlay --- */
+        /* GRID OVERLAY */
         #grid-overlay {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.98);
             z-index: 100;
             overflow-y: auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
             box-sizing: border-box;
         }
 
+        /* BIGGER GRID IMAGES */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .mini-card {
             aspect-ratio: 2/3;
-            border: 1px solid #333;
-            border-radius: 4px;
+            border: 2px solid #333;
+            border-radius: 8px;
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .mini-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .mini-card:hover { transform: scale(1.05); border-color: #777; }
+        .mini-card img { width: 100%; height: 100%; object-fit: cover; }
 
         .close-btn {
-            position: sticky;
-            top: 0;
-            left: 90%;
+            position: fixed;
+            top: 20px;
+            right: 30px;
             font-size: 2rem;
             color: white;
             cursor: pointer;
-            background: none;
+            background: rgba(40,40,40,0.8);
             border: none;
-            margin-bottom: 20px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            z-index: 110;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* LIGHTBOX */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-height: 85vh;
+            max-width: 90vw;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0,0,0,1);
         }
     </style>
 </head>
@@ -132,7 +152,6 @@
         <div class="card">
             <img src="photos/distant.jpg" alt="Distant">
         </div>
-
         <div class="card">
             <img id="daily-photo" src="" alt="Daily Random">
         </div>
@@ -147,62 +166,65 @@
 
     <div id="grid-overlay">
         <button class="close-btn" id="close-grid">&times;</button>
-        <div class="grid-container" id="grid-content">
-            </div>
+        <div class="grid-container" id="grid-content"></div>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Size">
     </div>
 
     <script>
         const folder = 'photos/';
-
         const photoPool = [
-            '2heart.jpg', '2club.jpg', '2spade.jpg',
-            '3club.jpg', '3dia.jpg', '3spade.jpg',
-            '4dia.jpg', '4spade.jpg', '4heart.jpg',
-            '5club.jpg', '5dia.jpg', '5heart.jpg', '5spade.jpg',
-            '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg',
-            '7club.jpg', '7dia.jpg', '7heart.jpg',
-            '8club.jpg', '8heart.jpg', '8spade.jpg',
-            '9club.jpg', '9dia.jpg', '9heart.jpg', '9spade.jpg',
-            '10club.jpg', '10dia.jpg', '10heart.jpg', '10spade.jpg',
-            'aclub.jpg', 'aspade.jpg',
-            'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 'joker.jpg', 'jspade.jpg',
-            'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
+            '2heart.jpg', '2club.jpg', '2spade.jpg', '3club.jpg', '3dia.jpg', '3spade.jpg',
+            '4dia.jpg', '4spade.jpg', '4heart.jpg', '5club.jpg', '5dia.jpg', '5heart.jpg', 
+            '5spade.jpg', '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg', '7club.jpg', 
+            '7dia.jpg', '7heart.jpg', '8club.jpg', '8heart.jpg', '8spade.jpg', '9club.jpg', 
+            '9dia.jpg', '9heart.jpg', '9spade.jpg', '10club.jpg', '10dia.jpg', '10heart.jpg', 
+            '10spade.jpg', 'aclub.jpg', 'aspade.jpg', 'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 
+            'joker.jpg', 'jspade.jpg', 'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
             'qclub.jpg', 'qdia.jpg', 'qspade.jpg'
         ];
 
-        // 1. SET DAILY IMAGE
+        // 1. SELECT DAILY IMAGE
         const now = new Date();
         const daysSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
         const dailyIndex = daysSinceEpoch % photoPool.length;
-        document.getElementById('daily-photo').src = folder + photoPool[dailyIndex];
+        const dailyPhoto = photoPool[dailyIndex];
+        document.getElementById('daily-photo').src = folder + dailyPhoto;
 
-        // 2. GRID LOGIC
+        // 2. GRID ELEMENTS
         const btn = document.getElementById('view-deck-btn');
         const overlay = document.getElementById('grid-overlay');
         const closeBtn = document.getElementById('close-grid');
         const gridContent = document.getElementById('grid-content');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
 
-        // Open Grid
+        // Open Grid (Excluding the daily photo)
         btn.onclick = () => {
-            // Only build the grid once for performance
-            if (gridContent.children.length === 0) {
-                photoPool.forEach(photo => {
+            gridContent.innerHTML = ''; 
+            photoPool.forEach(photo => {
+                if (photo !== dailyPhoto) { 
                     const div = document.createElement('div');
                     div.className = 'mini-card';
                     const img = document.createElement('img');
                     img.src = folder + photo;
+                    
+                    div.onclick = () => {
+                        lightboxImg.src = folder + photo;
+                        lightbox.style.display = 'flex';
+                    };
+                    
                     div.appendChild(img);
                     gridContent.appendChild(div);
-                });
-            }
+                }
+            });
             overlay.style.display = 'block';
         };
 
-        // Close Grid
-        closeBtn.onclick = () => {
-            overlay.style.display = 'none';
-        };
+        closeBtn.onclick = () => overlay.style.display = 'none';
+        lightbox.onclick = () => lightbox.style.display = 'none';
     </script>
-
 </body> 
 </html>
