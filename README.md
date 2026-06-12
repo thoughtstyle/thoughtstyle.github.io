@@ -167,4 +167,108 @@
         <div class="card">
             <img id="row2-card-1" src="" alt="Daily Card 1">
         </div>
-        <div class
+        <div class="card">
+            <img id="row2-card-2" src="" alt="Daily Card 2">
+        </div>
+        <div class="card">
+            <img id="row2-card-3" src="" alt="Daily Card 3">
+        </div>
+    </div>
+
+    <div class="info-text">
+        One Marshall McLuhan card per day.<br>
+        Inspired by <a href="https://www.weirdstudies.com/112" target="_blank">episode 112 of Weird Studies</a>
+    </div>
+
+    <button id="view-deck-btn">View Full Deck</button>
+
+    <div id="grid-overlay">
+        <button class="close-btn" id="close-grid">&times;</button>
+        <div class="grid-container" id="grid-content"></div>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Size">
+    </div>
+
+    <script>
+        const folder = 'photos/';
+        const photoPool = [
+            '2heart.jpg', '2club.jpg', '2spade.jpg', '3club.jpg', '3dia.jpg', '3spade.jpg',
+            '4dia.jpg', '4spade.jpg', '4heart.jpg', '5club.jpg', '5dia.jpg', '5heart.jpg', 
+            '5spade.jpg', '6club.jpg', '6dia.jpg', '6heart.jpg', '6spade.jpg', '7club.jpg', 
+            '7dia.jpg', '7heart.jpg', '8club.jpg', '8heart.jpg', '8spade.jpg', '9club.jpg', 
+            '9dia.jpg', '9heart.jpg', '9spade.jpg', '10club.jpg', '10dia.jpg', '10heart.jpg', 
+            '10spade.jpg', 'aclub.jpg', 'aspade.jpg', 'jclub.jpg', 'jdia.jpg', 'jheart.jpg', 
+            'joker.jpg', 'jspade.jpg', 'kclub.jpg', 'kdia.jpg', 'kheart.jpg', 'kspade.jpg',
+            'qclub.jpg', 'qdia.jpg', 'qspade.jpg'
+        ];
+
+        // 1. SELECT DAILY IMAGE FOR ROW 1 (UNCHANGED)
+        const now = new Date();
+        const daysSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+        const dailyIndex = daysSinceEpoch % photoPool.length;
+        const dailyPhoto = photoPool[dailyIndex];
+        document.getElementById('daily-photo').src = folder + dailyPhoto;
+
+        // --- NEW CODE: SELECT 3 RANDOM UNIQUE CARDS FOR ROW 2 ---
+        const cardsFolder = 'cards/';
+        let cardsPool = [...photoPool]; // Copy deck pool to track duplicates
+        
+        // Simple predictable randomizer function based on date seed
+        function seededRandom(seed) {
+            const x = Math.sin(seed) * 10000;
+            return x - Math.floor(x);
+        }
+
+        const selectedRow2Cards = [];
+        for (let i = 0; i < 3; i++) {
+            // Adjusting seed index safely per card slot so they generate randomly but stay static today
+            const currentSeed = daysSinceEpoch + 77 + i; 
+            const pickIndex = Math.floor(seededRandom(currentSeed) * cardsPool.length);
+            
+            selectedRow2Cards.push(cardsPool[pickIndex]);
+            cardsPool.splice(pickIndex, 1); // Remove card from temporary sub-pool to eliminate duplicate draws
+        }
+
+        // Apply images to Row 2 image elements
+        document.getElementById('row2-card-1').src = cardsFolder + selectedRow2Cards[0];
+        document.getElementById('row2-card-2').src = cardsFolder + selectedRow2Cards[1];
+        document.getElementById('row2-card-3').src = cardsFolder + selectedRow2Cards[2];
+        // --- END NEW CODE ---
+
+        // 2. GRID ELEMENTS
+        const btn = document.getElementById('view-deck-btn');
+        const overlay = document.getElementById('grid-overlay');
+        const closeBtn = document.getElementById('close-grid');
+        const gridContent = document.getElementById('grid-content');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Open Grid (Excluding the daily photo)
+        btn.onclick = () => {
+            gridContent.innerHTML = ''; 
+            photoPool.forEach(photo => {
+                if (photo !== dailyPhoto) { 
+                    const div = document.createElement('div');
+                    div.className = 'mini-card';
+                    const img = document.createElement('img');
+                    img.src = folder + photo;
+                    
+                    div.onclick = () => {
+                        lightboxImg.src = folder + photo;
+                        lightbox.style.display = 'flex';
+                    };
+                    
+                    div.appendChild(img);
+                    gridContent.appendChild(div);
+                }
+            });
+            overlay.style.display = 'block';
+        };
+
+        closeBtn.onclick = () => overlay.style.display = 'none';
+        lightbox.onclick = () => lightbox.style.display = 'none';
+    </script>
+</body> 
+</html>
