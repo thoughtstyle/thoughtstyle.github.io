@@ -36,7 +36,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* FIXED ROW 2 SPECIFIC: Height is set to auto so the full image can scale down naturally */
+        /* ROW 2 SPECIFIC: Height scales naturally to keep aspect ratio perfect */
         .row-2-wrapper .card {
             height: auto; 
             aspect-ratio: 2 / 3; 
@@ -49,7 +49,7 @@
             display: block;
         }
 
-        /* FIXED ROW 2 IMAGES: Uses 'fill' or 'contain' to force the full top-to-bottom image layout */
+        /* ROW 2 IMAGES: Forces the full image to fit without any top or bottom cropping */
         .row-2-wrapper .card img {
             object-fit: fill; 
         }
@@ -159,15 +159,17 @@
         const dailyPhoto = photoPool[dailyIndex];
         document.getElementById('daily-photo').src = folder + dailyPhoto;
 
-        // 2. GENERATE POOL & PICK 3 UNIQUE CARDS FOR ROW 2
+        // 2. GENERATE POOL & RANDOMIZE 3 UNIQUE CARDS FOR ROW 2 EACH DAY
         const cardsFolder = 'cards/';
         let cardsPool = [];
         
+        // Fills deck from '01.jpg' to '26.jpg'
         for (let i = 1; i <= 26; i++) {
             let paddedNum = i.toString().padStart(2, '0');
             cardsPool.push(`${paddedNum}.jpg`);
         }
         
+        // Seeded random function ensures selections change every calendar day, but stay fixed when reloading on the same day
         function seededRandom(seed) {
             const x = Math.sin(seed) * 10000;
             return x - Math.floor(x);
@@ -175,32 +177,12 @@
 
         const selectedRow2Cards = [];
         for (let i = 0; i < 3; i++) {
-            const currentSeed = daysSinceEpoch + 77 + i; 
+            // Using daysSinceEpoch combined with an index offset to pick random, distinct indices daily
+            const currentSeed = daysSinceEpoch + 500 + i; 
             const pickIndex = Math.floor(seededRandom(currentSeed) * cardsPool.length);
             
             selectedRow2Cards.push(cardsPool[pickIndex]);
-            cardsPool.splice(pickIndex, 1);
+            cardsPool.splice(pickIndex, 1); // Removes selected item to prevent duplicates within the three cards
         }
 
         document.getElementById('row2-card-1').src = cardsFolder + selectedRow2Cards[0];
-        document.getElementById('row2-card-2').src = cardsFolder + selectedRow2Cards[1];
-        document.getElementById('row2-card-3').src = cardsFolder + selectedRow2Cards[2];
-
-        // 3. LIGHTBOX SYSTEM FOR IMAGES
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        document.querySelectorAll('.card img').forEach(img => {
-            img.style.cursor = 'zoom-in';
-            img.onclick = () => {
-                if (img.src) {
-                    lightboxImg.src = img.src;
-                    lightbox.style.display = 'flex';
-                }
-            };
-        });
-
-        lightbox.onclick = () => lightbox.style.display = 'none';
-    </script>
-</body> 
-</html>
