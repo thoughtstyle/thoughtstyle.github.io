@@ -28,7 +28,6 @@
 
         .card {
             width: 195px;
-            height: 300px;
             border: 2px solid #444;
             border-radius: 12px;
             overflow: hidden;
@@ -36,22 +35,31 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* ROW 2 ONLY: Changes height dynamically for the lower 3 cards */
+        /* ROW 1 ONLY: Maintains its original legacy layout shape */
+        .row-1-wrapper .card {
+            height: 300px;
+        }
+
+        /* ROW 2 ONLY: Width matches Row 1, height adapts entirely to image file format proportions */
         .row-2-wrapper .card {
             height: auto; 
-            aspect-ratio: 2 / 3; 
         }
 
         .card img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; 
             display: block;
         }
 
-        /* ROW 2 IMAGES ONLY: Keeps full frame uncropped */
+        /* ROW 1 IMAGES: Legacy fill style */
+        .row-1-wrapper .card img {
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        /* ROW 2 IMAGES: Renders clean layout aspect ratios with no distortion or squishing */
         .row-2-wrapper .card img {
-            object-fit: fill; 
+            height: auto;
+            object-fit: contain; 
         }
 
         /* LEFT JUSTIFIED TEXT */
@@ -107,8 +115,7 @@
 </head>
 <body>
 
-    <!-- ROW 1: Contains exactly 2 cards -->
-    <div class="card-wrapper">
+    <div class="card-wrapper row-1-wrapper">
         <div class="card">
             <img src="photos/distant.jpg" alt="Distant">
         </div>
@@ -117,16 +124,13 @@
         </div>
     </div>
 
-    <!-- TEXT AREA BELOW ROW 1 -->
     <div class="info-text">
         One Marshall McLuhan card per day.<br>
         Inspired by <a href="https://www.weirdstudies.com/112" target="_blank">episode 112 of Weird Studies</a>
     </div>
 
-    <!-- MIDDLE TITLE HEADER -->
     <div class="deck-header-text">Lenormand Deck Cards of the Day</div>
 
-    <!-- ROW 2: Contains exactly 3 cards -->
     <div class="card-wrapper row-2-wrapper">
         <div class="card">
             <img id="row2-card-1" src="" alt="Daily Card 1">
@@ -139,7 +143,6 @@
         </div>
     </div>
 
-    <!-- POPUP ZOOM LIGHTBOX -->
     <div id="lightbox">
         <img id="lightbox-img" src="" alt="Full Size">
     </div>
