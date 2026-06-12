@@ -36,11 +36,22 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
+        /* FIXED ROW 2 SPECIFIC: Height is set to auto so the full image can scale down naturally */
+        .row-2-wrapper .card {
+            height: auto; 
+            aspect-ratio: 2 / 3; 
+        }
+
         .card img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; 
             display: block;
+        }
+
+        /* FIXED ROW 2 IMAGES: Uses 'fill' or 'contain' to force the full top-to-bottom image layout */
+        .row-2-wrapper .card img {
+            object-fit: fill; 
         }
 
         /* LEFT JUSTIFIED TEXT */
@@ -112,7 +123,7 @@
 
     <div class="deck-header-text">Lenormand Deck Cards of the Day</div>
 
-    <div class="card-wrapper">
+    <div class="card-wrapper row-2-wrapper">
         <div class="card">
             <img id="row2-card-1" src="" alt="Daily Card 1">
         </div>
@@ -148,7 +159,7 @@
         const dailyPhoto = photoPool[dailyIndex];
         document.getElementById('daily-photo').src = folder + dailyPhoto;
 
-        // 2. GENERATE '01.jpg' through '26.jpg' POOL & PICK 3 UNIQUE CARDS FOR ROW 2
+        // 2. GENERATE POOL & PICK 3 UNIQUE CARDS FOR ROW 2
         const cardsFolder = 'cards/';
         let cardsPool = [];
         
@@ -179,7 +190,6 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        // Setup clicking logic on all existing layout cards to reveal them full size
         document.querySelectorAll('.card img').forEach(img => {
             img.style.cursor = 'zoom-in';
             img.onclick = () => {
