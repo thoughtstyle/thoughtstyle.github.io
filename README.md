@@ -11,11 +11,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Changed to let content flow naturally down */
-            min-height: 100vh;           /* Ensures background covers full screen */
-            padding: 40px 20px;          /* Gives space at top and bottom */
+            justify-content: flex-start;
+            min-height: 100vh;           
+            padding: 40px 20px;          
             color: white;
-            overflow-y: auto;            /* Allows scrolling if screen is small */
+            overflow-y: auto;            
         }
 
         .card-wrapper {
@@ -46,7 +46,7 @@
         /* LEFT JUSTIFIED TEXT */
         .info-text {
             margin-top: 20px;
-            margin-bottom: 40px; /* Added margin to push the next row down cleanly */
+            margin-bottom: 40px; 
             text-align: left;
             font-size: 0.7rem;
             color: #888;
@@ -54,76 +54,21 @@
             letter-spacing: 1px;
             line-height: 1.6;
             width: 100%;
-            max-width: 410px; /* Aligns roughly with the width of two cards + gap */
+            max-width: 410px; 
         }
 
         .info-text a { color: #aaa; text-decoration: underline; }
 
-        #view-deck-btn {
+        /* HEADER TEXT STYLE FOR ROW 2 */
+        .deck-header-text {
             margin-top: 30px;
-            padding: 8px 16px;
-            background: transparent;
-            color: #888;
-            border: 1px solid #444;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.7rem;
+            margin-bottom: 20px;
+            font-size: 0.75rem;
+            color: #aaa;
             text-transform: uppercase;
-            align-self: center;
-        }
-
-        /* GRID OVERLAY */
-        #grid-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 10, 0.98);
-            z-index: 100;
-            overflow-y: auto;
-            padding: 60px 20px;
-            box-sizing: border-box;
-        }
-
-        /* BIGGER GRID IMAGES */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .mini-card {
-            aspect-ratio: 2/3;
-            border: 2px solid #333;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .mini-card:hover { transform: scale(1.05); border-color: #777; }
-        .mini-card img { width: 100%; height: 100%; object-fit: cover; }
-
-        .close-btn {
-            position: fixed;
-            top: 20px;
-            right: 30px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            background: rgba(40,40,40,0.8);
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            z-index: 110;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-align: center;
         }
 
         /* LIGHTBOX */
@@ -165,6 +110,8 @@
         Inspired by <a href="https://www.weirdstudies.com/112" target="_blank">episode 112 of Weird Studies</a>
     </div>
 
+    <div class="deck-header-text">Lenormand Deck Cards of the Day</div>
+
     <div class="card-wrapper">
         <div class="card">
             <img id="row2-card-1" src="" alt="Daily Card 1">
@@ -175,13 +122,6 @@
         <div class="card">
             <img id="row2-card-3" src="" alt="Daily Card 3">
         </div>
-    </div>
-
-    <button id="view-deck-btn">View Full Deck</button>
-
-    <div id="grid-overlay">
-        <button class="close-btn" id="close-grid">&times;</button>
-        <div class="grid-container" id="grid-content"></div>
     </div>
 
     <div id="lightbox">
@@ -235,37 +175,21 @@
         document.getElementById('row2-card-2').src = cardsFolder + selectedRow2Cards[1];
         document.getElementById('row2-card-3').src = cardsFolder + selectedRow2Cards[2];
 
-        // 3. GRID ELEMENTS
-        const btn = document.getElementById('view-deck-btn');
-        const overlay = document.getElementById('grid-overlay');
-        const closeBtn = document.getElementById('close-grid');
-        const gridContent = document.getElementById('grid-content');
+        // 3. LIGHTBOX SYSTEM FOR IMAGES
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        // Open Grid (Excluding the daily photo)
-        btn.onclick = () => {
-            gridContent.innerHTML = ''; 
-            photoPool.forEach(photo => {
-                if (photo !== dailyPhoto) { 
-                    const div = document.createElement('div');
-                    div.className = 'mini-card';
-                    const img = document.createElement('img');
-                    img.src = folder + photo;
-                    
-                    div.onclick = () => {
-                        lightboxImg.src = folder + photo;
-                        lightbox.style.display = 'flex';
-                    };
-                    
-                    div.appendChild(img);
-                    gridContent.appendChild(div);
+        // Setup clicking logic on all existing layout cards to reveal them full size
+        document.querySelectorAll('.card img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.onclick = () => {
+                if (img.src) {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = 'flex';
                 }
-            });
-            overlay.style.display = 'block';
-        };
+            };
+        });
 
-        closeBtn.onclick = () => overlay.style.display = 'none';
         lightbox.onclick = () => lightbox.style.display = 'none';
     </script>
 </body> 
